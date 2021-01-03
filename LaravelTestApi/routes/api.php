@@ -23,10 +23,10 @@ Route::middleware('auth:api')->post('logout', [AuthController::class, 'logout'])
 Route::middleware('auth:api')->post('refresh', [AuthController::class, 'refresh']);
 Route::middleware('auth:api')->post('me', [AuthController::class, 'me']);
 
-Route::get('v1/accounts', [AccountController::class, 'index']);
-Route::post('v1/accounts', [AccountController::class, 'store']);
-Route::get('v1/accounts/{id}', [AccountController::class, 'show']);
+Route::middleware('auth:api')->get('v1/accounts', [AccountController::class, 'index']);
+Route::middleware('auth:api')->post('v1/accounts', [AccountController::class, 'store']);
+Route::middleware('auth:api')->get('v1/accounts/{id}', [AccountController::class, 'show']);
 
-Route::get('v1/transactions', [TransactionController::class, 'index']);
-Route::post('v1/transactions', [TransactionController::class, 'store']);
-Route::get('v1/transactions/{id}', [TransactionController::class, 'show']);
+Route::middleware('auth:api')->get('v1/transactions', [TransactionController::class, 'index']);
+Route::middleware('auth:api')->post('v1/transactions', [TransactionController::class, 'store']);
+Route::middleware('auth:api')->get('v1/transactions/{id}', [TransactionController::class, 'show']);
