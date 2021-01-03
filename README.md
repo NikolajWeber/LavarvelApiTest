@@ -1,7 +1,16 @@
 ## Laravel Api Test
 
-Run API with php artisan serve<br>
+Run API with<br>
+```
+php artisan serve
+```
+<br>
 add .env file with correct mysql connection<br>
+<br>
+Run database migration and seeder with<br>
+```
+php artisan migrate --seed
+```
 <br>
 All routes except 'login' requires headers<br>
 - Authorization : 'Bearer {token}'
