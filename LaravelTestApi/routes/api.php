@@ -3,8 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\AccountController;
-use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\v1\AccountController;
+use App\Http\Controllers\v1\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +18,10 @@ use App\Http\Controllers\TransactionController;
 */
 
 
-Route::get('accounts', [AccountController::class, 'index']);
-Route::post('accounts', [AccountController::class, 'store']);
-Route::get('accounts/{id}', [AccountController::class, 'show']);
+Route::get('v1/accounts', [AccountController::class, 'index']);
+Route::post('v1/accounts', [AccountController::class, 'store']);
+Route::get('v1/accounts/{id}', [AccountController::class, 'show']);
 
-Route::get('transactions', [TransactionController::class, 'index']);
-Route::post('transactions', [TransactionController::class, 'store']);
-Route::get('transactions/{id}', [TransactionController::class, 'show']);
+Route::get('v1/transactions', [TransactionController::class, 'index']);
+Route::post('v1/transactions', [TransactionController::class, 'store']);
+Route::get('v1/transactions/{id}', [TransactionController::class, 'show']);
