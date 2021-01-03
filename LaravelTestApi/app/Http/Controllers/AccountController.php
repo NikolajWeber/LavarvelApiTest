@@ -39,7 +39,7 @@ class AccountController extends Controller
      */
     public function show($id)
     {
-        return Account::with('transactions')->find($id);
+        return Account::with('transactions')->findOrFail($id);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Transaction;
 
 class TransactionController extends Controller
 {
@@ -13,7 +14,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        return Transaction::get();
     }
 
     /**
@@ -24,7 +25,12 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'account_id' => 'required',
+            'description' => 'required',
+            'amount' => 'required'
+        ]);
+        return Transaction::create($request->all());
     }
 
     /**
@@ -35,7 +41,7 @@ class TransactionController extends Controller
      */
     public function show($id)
     {
-        //
+        return Transaction::findOrFail($id);
     }
 
     /**
