@@ -17,9 +17,9 @@ php artisan migrate --seed
 
 <br>
 All routes except 'login' requires headers<br>
-- Authorization : 'Bearer {token}'
-- Accept : 'application/json'
-- Content-Type : 'application/json'
+- Authorization : 'Bearer {token}'<br>
+- Accept : 'application/json'<br>
+- Content-Type : 'application/json'<br>
 
 ## Routes for JWT login
 
