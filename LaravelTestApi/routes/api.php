@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\AccountController;
 use App\Http\Controllers\v1\TransactionController;
 
+use App\Http\Controllers\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,7 +18,10 @@ use App\Http\Controllers\v1\TransactionController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::post('login', [AuthController::class, 'login']);
+Route::middleware('auth:api')->post('logout', [AuthController::class, 'logout']);
+Route::middleware('auth:api')->post('refresh', [AuthController::class, 'refresh']);
+Route::middleware('auth:api')->post('me', [AuthController::class, 'me']);
 
 Route::get('v1/accounts', [AccountController::class, 'index']);
 Route::post('v1/accounts', [AccountController::class, 'store']);
