@@ -30,3 +30,4 @@ Route::middleware('auth:api')->get('v1/accounts/{id}', [AccountController::class
 Route::middleware('auth:api')->get('v1/transactions', [TransactionController::class, 'index']);
 Route::middleware('auth:api')->post('v1/transactions', [TransactionController::class, 'store']);
 Route::middleware('auth:api')->get('v1/transactions/{id}', [TransactionController::class, 'show']);
+Route::middleware('auth:api')->get('v1/transactions/list/{accountId}', [TransactionController::class, 'showByAccountId']);

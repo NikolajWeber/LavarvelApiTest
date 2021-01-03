@@ -40,6 +40,17 @@ class TransactionController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param  int  $accountId
+     * @return \Illuminate\Http\Response
+     */
+    public function showByAccountId($accountId)
+    {
+        return Transaction::where('account_id', '=', $accountId)->get();
+    }
+
+    /**
+     * Display the specified resource.
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
