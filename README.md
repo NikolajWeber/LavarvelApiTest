@@ -3,7 +3,7 @@
 Run API with php artisan serve<br>
 add .env file with correct mysql connection<br>
 <br>
-All routes except requires headers<br>
+All routes except 'login' requires headers<br>
 - Authorization : 'Bearer {token}'
 - Accept : 'application/json'
 - Content-Type : 'application/json'
