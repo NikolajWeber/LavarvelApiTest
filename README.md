@@ -47,3 +47,18 @@ All routes except 'login' requires headers<br>
 - User {string: 'email', string: 'password'}
 - Account {string: 'name'}
 - Transaction {int: 'account_id', string: 'description', double: 'amount'}
+
+## Tests
+
+Run test with<br><br>
+
+```
+php artisan test
+```
+
+<br>
+
+- api login
+- sign in api for test
+- account create
+- transaction create
