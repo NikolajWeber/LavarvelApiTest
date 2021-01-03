@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Account;
 
 class AccountController extends Controller
 {
@@ -13,7 +14,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        //
+        return Account::with('transactions')->get();
     }
 
     /**
@@ -24,7 +25,10 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+        return Account::create($request->all());
     }
 
     /**
@@ -35,7 +39,7 @@ class AccountController extends Controller
      */
     public function show($id)
     {
-        //
+        return Account::with('transactions')->find($id);
     }
 
     /**
@@ -47,7 +51,12 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+        $account = Account::findOrFail($id);
+        $account->update($request->all());
+        return response()->json($account, 201);
     }
 
     /**
@@ -58,6 +67,9 @@ class AccountController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $account = Account::findOrFail($id);
+        $account->transactions()->delete();
+        $account->delete();
+        return response()->json(null, 204);
     }
 }
