@@ -10,7 +10,7 @@ class Account extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $fillable = ['name', 'email', 'phone'];
+    protected $fillable = ['name'];
     protected $table = "accounts";
 
     protected $appends = ['sum_balance'];
