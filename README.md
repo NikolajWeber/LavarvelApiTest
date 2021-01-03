@@ -9,7 +9,7 @@ php artisan serve
 <br>
 add .env file with correct mysql connection<br>
 <br>
-Run database migration and seeder with<br>
+Run database migration and seeder with<br><br>
 
 ```
 php artisan migrate --seed
