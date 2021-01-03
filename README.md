@@ -9,7 +9,7 @@ php artisan serve
 <br>
 add .env file with correct mysql connection<br>
 <br>
-Run database migration and seeder with<br>
+Run database migration and seeder with<br><br>
 
 ```
 php artisan migrate --seed
@@ -17,9 +17,9 @@ php artisan migrate --seed
 
 <br>
 All routes except 'login' requires headers<br>
-- Authorization : 'Bearer {token}'
-- Accept : 'application/json'
-- Content-Type : 'application/json'
+- Authorization : 'Bearer {token}'<br>
+- Accept : 'application/json'<br>
+- Content-Type : 'application/json'<br>
 
 ## Routes for JWT login
 
